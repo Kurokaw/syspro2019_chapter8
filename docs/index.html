@@ -22,7 +22,17 @@
         </div>
         <script>
             // TODO0 ここに設定情報を貼り付ける  
-            
+              var firebaseConfig = {
+                apiKey: "AIzaSyAB5qoZm8W8xzBKtX8njYkiM5AdL0g7624",
+                authDomain: "syspro2019-temperature-eren14.firebaseapp.com",
+                databaseURL: "https://syspro2019-temperature-eren14.firebaseio.com",
+                projectId: "syspro2019-temperature-eren14",
+                storageBucket: "syspro2019-temperature-eren14.appspot.com",
+                messagingSenderId: "91075486909",
+                appId: "1:91075486909:web:e0a001083f7a92989f03d4"
+              };
+              // Initialize Firebase
+              firebase.initializeApp(firebaseConfig);
             
             // データベースの参照を準備
             var ledRef = firebase.firestore().collection('led')
