@@ -16,23 +16,31 @@
             <div class="line__container">
                 <ul id="messages"></ul>
             </div>
-            <button id="led-on">入室しました</button>
-            <button id="led-off">退室しました</button>
+            <button id="led-on" value="ON">入室しました</button>
+            <button id="led-off" value="OFF">退室しました</button>
             <a href="./temp.html">温度情報</a>
         </div>
         <script>
             // TODO0 ここに設定情報を貼り付ける  
             
+            
             // データベースの参照を準備
             var ledRef = firebase.firestore().collection('led')
-        
-            // TODO1 送信ボタンが押された時の処理
             
+            // TODO1 送信ボタンが押された時の処理
             $('#led-on').click(function() {
-		    // {led: "ON"}を送信
+		        console.log("led-on");
+		        ledRef.add({
+                    led: $('#led-on').val()
+                });
+                
             });
             $('#led-off').click(function() {
-		    // {led: "OFF"}を送信
+		        console.log("led-off");
+		        ledRef.add({
+                    led: $('#led-off').val()
+                });
+                
             });
 
         </script>
